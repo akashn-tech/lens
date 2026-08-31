@@ -1,6 +1,6 @@
 # XYMP Lens Backend
 
-> High-performance, asynchronous AI data intelligence service transforming natural language questions into safe, read-only SQL queries and synthesized analytical insights across PostgreSQL, MongoDB, and Excel (DuckDB).
+AI data intelligence service transforming natural language questions into safe, read-only SQL queries and synthesized analytical insights across PostgreSQL, MongoDB, and Excel (DuckDB).
 
 ---
 
@@ -8,12 +8,6 @@
 
 **XYMP Lens Backend** is an API-first FastAPI service built to bridge business inquiries and complex analytical databases. It acts as an intelligent data layer that enables non-technical and technical users alike to query heterogeneous data sources using conversational English without compromising database security or exposing raw database credentials to LLMs.
 
-### The Core Problem
-Traditional Text-to-SQL solutions suffer from major drawbacks:
-1. **Security Vulnerabilities**: Providing language models direct execution tools or database connection strings creates SQL-injection and destructive mutation risks (`DROP`, `DELETE`, `UPDATE`).
-2. **Schema Hallucinations**: Large database schemas exceed LLM context windows or cause hallucinated joins and incorrect column mappings.
-3. **Engine Heterogeneity**: Teams maintain data across relational databases (PostgreSQL), document stores (MongoDB), and spreadsheet exports (Excel `.xlsx`), requiring fragmented tooling.
-4. **Lack of Conversational Context**: Isolated queries fail when users ask follow-up questions referencing previous calculations or pronouns ("how did that change last quarter?", "what about his department?").
 
 ### The Lens Philosophy
 - **Zero-Access Generation**: The LLM *never* receives direct database access or execution tools. Query generation operates exclusively against an isolated schema catalog stored in Supabase.
